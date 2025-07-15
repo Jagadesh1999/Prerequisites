@@ -12,12 +12,12 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
-        int max = arr[0];
+        int sol = arr[0];
         for(int i = 0; i < size; i++) {
-            if(arr[i] > max) max = arr[i];
+            sol = Math.max(arr[i], sol);
         }
 
-        System.out.println(max);
+        System.out.println(sol);
     }
 
     public static void main(String[] args) {
