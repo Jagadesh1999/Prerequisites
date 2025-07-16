@@ -51,3 +51,26 @@ public class Main {
         solve();
     }
 }
+
+// 3. Oddsum and Evensum in the array
+public class Main {
+    public static void solve() {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+
+        int[] nums = new int[size];
+        for(int i = 0; i < size; i++) nums[i] = sc.nextInt();
+
+        int oddSum = 0; int evenSum = 0;
+        for(int i = 0; i < size; i++) {
+            if(nums[i] % 2 != 0) oddSum += nums[i];
+            else evenSum += nums[i];
+        }
+
+        System.out.print(oddSum + " " + evenSum);
+    }
+
+    public static void main(String[] args) {
+        solve();
+    }
+}
