@@ -130,3 +130,30 @@ public class Main {
         solve();
     }
 }
+
+// 7. Max contiguous 1s in the array
+public class Main
+{
+    public static void solve() {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        
+        int[] nums = new int[size];
+        for(int i = 0; i < size; i++) nums[i] = sc.nextInt();
+        
+        int maxCount = 0; int currCount = 0;
+        for(int i = 0; i < n; i++) {
+            if(nums[i] == 1) {
+                currCount ++;
+                maxCount = Math.max(currentCount, maxCount);
+            } else {
+                currCount = 0;
+            }
+        }
+        System.out.print(maxCount);
+    }
+    
+	public static void main(String[] args) {
+		solve();
+	}
+} // TC : O(n)
