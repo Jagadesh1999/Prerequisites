@@ -131,7 +131,7 @@ public class Main {
     }
 }
 
-// 7. Max contiguous 1s in the array
+// 7. Max contiguous 1's in the array
 public class Main
 {
     public static void solve() {
@@ -157,3 +157,28 @@ public class Main
 		solve();
 	}
 } // TC : O(n)
+
+// 8. Max Altitude
+public class Main {
+    public static void solve() {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+
+        int[] nums = new int[size];
+        for(int i = 0; i < size; i++) {
+            nums[i] = sc.nextInt();
+        }
+
+        int maxAltitude = Integer.MIN_VALUE; int currAltitude = 0;
+        for(int i = 0; i < size; i++) {
+            currAltitude += nums[i];
+            maxAltitude = Math.max(currAltitude, maxAltitude);
+        }
+
+        System.out.print(maxAltitude);
+    } // TC : O(n)
+
+    public static void main(String[] args) {
+        solve();
+    }
+} 
