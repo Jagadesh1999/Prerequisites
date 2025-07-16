@@ -142,10 +142,10 @@ public class Main
         for(int i = 0; i < size; i++) nums[i] = sc.nextInt();
         
         int maxCount = 0; int currCount = 0;
-        for(int i = 0; i < n; i++) {
+        for(int i = 0; i < size; i++) {
             if(nums[i] == 1) {
                 currCount ++;
-                maxCount = Math.max(currentCount, maxCount);
+                maxCount = Math.max(currCount, maxCount);
             } else {
                 currCount = 0;
             }
