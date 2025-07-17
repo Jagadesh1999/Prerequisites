@@ -102,3 +102,32 @@ public class Main
 		solve();
 	}
 }
+
+// 6. Nth Fibonacci number
+public class Main {
+    public static void solve() {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+
+        if(num < 2) {
+            System.out.print(num);
+            return;
+        }
+
+        int a = 0; 
+        int b = 1;
+        int sum = 0;
+
+        for(int i = 2; i <= num; i++) {
+            sum = a + b;
+            a = b;
+            b = sum;
+        }
+        System.out.print(sum);
+    }
+
+    public static void main(String[] args) {
+        solve();
+    }
+}
+
