@@ -131,3 +131,43 @@ public class Main {
     }
 }
 
+// 7. Armstrong number
+// Approach : 
+// -- Count the total number of digits.
+// -- For each digit, find the digit ^ count and add it to the sum value.
+// -- Check if the final sum is equal to the input number.
+public class Main {
+    public static void solve() {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        
+        
+        int count = 0; int temp_1, temp_2; temp_1 = temp_2 = num;
+	    
+        while(temp_1 != 0) {
+            temp_1 /= 10;
+            count ++;
+        } // int count = String.valueOf(num).length();
+        
+        int sum = 0;
+        while(num != 0) {
+            int digit = num % 10;
+            int prod = 1;
+            for(int i = 1; i <= count; i++) {
+                prod = prod * digit;
+            } // int prod = Math.pow(digit, count); 
+            sum = sum + prod;
+            num /= 10;
+        }
+       
+       if(sum == temp_2) {
+           System.out.println("Yes");
+           return;
+       }
+       System.out.println("No");
+    } // TC : O(digits * digits)
+
+    public static void main(String[] args) {
+	   solve();
+    }
+}
