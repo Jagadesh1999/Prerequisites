@@ -141,21 +141,23 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
         
+        // int count = 0;
+        int temp_1, temp_2; temp_1 = temp_2 = num;
         
-        int count = 0; int temp_1, temp_2; temp_1 = temp_2 = num;
-	    
-        while(temp_1 != 0) {
-            temp_1 /= 10;
-            count ++;
-        } // int count = String.valueOf(num).length();
+        // while(temp_1 != 0) {
+        //     temp_1 /= 10;
+        //     count ++;
+        // }
+        int count = String.valueOf(num).length();
         
         int sum = 0;
         while(num != 0) {
             int digit = num % 10;
-            int prod = 1;
-            for(int i = 1; i <= count; i++) {
-                prod = prod * digit;
-            } // int prod = Math.pow(digit, count); 
+            // int prod = 1;
+            // for(int i = 1; i <= count; i++) {
+            //     prod = prod * digit;
+            // }
+            int prod = (int) Math.pow(digit, count);
             sum = sum + prod;
             num /= 10;
         }
