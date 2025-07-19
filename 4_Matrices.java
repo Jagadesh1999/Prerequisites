@@ -87,7 +87,7 @@ public class Main {
         if(x1 > 0 && y1 > 0) submatrix_sum += ps_mat[x1-1][y1-1];
 
         System.out.println(submatrix_sum);
-    } // TC : O(q)
+    } // TC : O(n^2 + q)
 
     public static void main(String[] args) {
         solve();
