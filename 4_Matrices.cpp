@@ -1,97 +1,91 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 // 1. Print matrix sum row - wise
-public class Main {
-    public static void solve() {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
+void solve() {
+    int n, m;
+    cin >> n >> m;
 
-        int[][] mat = new int[n][m];
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < m; j++) {
-                mat[i][j] = sc.nextInt();
-            }
+    int mat[n][m];
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            cin >> mat[i][j];
         }
-
-        for(int i = 0; i < n; i++) {
-            int sum = 0;
-            for(int j = 0; j < m; j++) {
-                sum += mat[i][j];
-            }
-            System.out.println(sum);
-        }
-    } // TC : O(n * m)
-
-    public static void main(String[] args) {
-        solve();
     }
+
+    for(int i = 0; i < n; i++) {
+        int sum = 0;
+        for(int j = 0; j < m; j++) {
+            sum += mat[i][j];
+        }
+        cout << sum << endl;
+    }
+} // TC : O(n * m)
+
+int main() {
+    solve();
+    return 0;
 }
 
 // 2. Print matrix sum column wise
-public class Main {
-    public static void solve() {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
+void solve() {
+    int n, m;
+    cin >> n >> m;
 
-        int[][] mat = new int[n][m];
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < m; j++) {
-                mat[i][j] = sc.nextInt();
-            }
-        }
-
+    int mat[n][m];
+    for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
-            int sum = 0;
-            for(int i = 0; i < n; i++) {
-                sum += mat[i][j];
-            }
-            System.out.println(sum);
+            cin >> mat[i][j];
         }
-    } // TC : O(m * n)
-
-    public static void main(String[] args) {
-        solve();
     }
+
+    for(int j = 0; j < m; j++) {
+        int sum = 0;
+        for(int i = 0; i < n; i++) {
+            sum += mat[i][j];
+        }
+        cout << sum << endl;
+    }
+} // TC : O(m * n)
+
+int main() {
+    solve();
+    return 0;
 }
 
 // 3. Submatrix sum
-public class Main {
-    public static void solve() {
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        int x1 = sc.nextInt();
-        int y1 = sc.nextInt();
-        int x2 = sc.nextInt();
-        int y2 = sc.nextInt();
+void solve() {
+    int num, x1, y1, x2, y2;
+    cin >> num >> x1 >> y1 >> x2 >> y2;
 
-        int[][] mat = new int[num][num];
-        for(int i = 0; i < num; i++) {
-            for(int j = 0; j < num; j++) {
-                mat[i][j] = sc.nextInt();
-            }
+    int mat[num][num];
+    for(int i = 0; i < num; i++) {
+        for(int j = 0; j < num; j++) {
+            cin >> mat[i][j];
         }
-
-        int[][] ps_mat = new int[num][num];
-        for(int i = 0; i < num; i++) {
-            for(int j = 0; j < num; j++) {
-                ps_mat[i][j] = mat[i][j];
-                if(i > 0) ps_mat[i][j] += ps_mat[i-1][j];
-                if(j > 0) ps_mat[i][j] += ps_mat[i][j-1];
-                if(i > 0 && j > 0) ps_mat[i][j] -= ps_mat[i-1][j-1];
-            }
-        }
-        
-        int submatrix_sum = ps_mat[x2][y2];
-        if(x1 > 0) submatrix_sum -= ps_mat[x1-1][y2];
-        if(y1 > 0) submatrix_sum -= ps_mat[x2][y1-1];
-        if(x1 > 0 && y1 > 0) submatrix_sum += ps_mat[x1-1][y1-1];
-
-        System.out.println(submatrix_sum);
-    } // TC : O(n^2 + q)
-
-    public static void main(String[] args) {
-        solve();
     }
+
+    int ps_mat[num][num];
+    for(int i = 0; i < num; i++) {
+        for(int j = 0; j < num; j++) {
+            ps_mat[i][j] = mat[i][j];
+            if(i > 0) ps_mat[i][j] += ps_mat[i-1][j];
+            if(j > 0) ps_mat[i][j] += ps_mat[i][j-1];
+            if(i > 0 && j > 0) ps_mat[i][j] -= ps_mat[i-1][j-1];
+        }
+    }
+    
+    int submatrix_sum = ps_mat[x2][y2];
+    if(x1 > 0) submatrix_sum -= ps_mat[x1-1][y2];
+    if(y1 > 0) submatrix_sum -= ps_mat[x2][y1-1];
+    if(x1 > 0 && y1 > 0) submatrix_sum += ps_mat[x1-1][y1-1];
+
+    cout << submatrix_sum << endl;
+} // TC : O(n^2 + q)
+
+int main() {
+    solve();
+    return 0;
 }
 
 /*
