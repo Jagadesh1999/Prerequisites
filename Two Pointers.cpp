@@ -80,7 +80,7 @@ int main()
 
     while (tail < n)
     {
-        while (head+1 < n && (arr[head+1]==1 || cntzero<k)
+        while (head+1 < n && (arr[head+1]==1 || cntzero<k))
         {
             head++;
             if(arr[head]==0)cntzero++;
