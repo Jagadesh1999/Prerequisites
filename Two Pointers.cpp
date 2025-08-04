@@ -106,3 +106,45 @@ int main()
 
     cout << ans << endl;
 }
+
+Template Based Approach : 
+
+Initialise the 4 essential markers. 
+(tail = 0, head = -1, counter = 0, ans = 0)
+
+
+while(tail < arr.length) : // 0 < 9 - True 
+	while(-1 + 1 = 0 < 9 and (1==1 || 0 < 2)) : //  True
+		head = 0;
+		if(1 == 0) // False 
+			so counter stays 0;
+
+	while(0 + 1 = 1 < 9 and (0==1 || 0 < 2)) : //  True
+		head = 1;
+		if(0 == 0) // True
+			so counter becomes 1;
+
+	while(1 + 1 = 2 < 9 and (0==1 || 1 < 2)) : //  True
+		head = 2;
+		if(0 == 0) // True
+			so counter becomes 2;
+
+	while(2 + 1 = 3 < 9 and (1==1 || 2 < 2)) : //  True
+		head = 3; 
+		if(1 == 0) // False
+			So counter stays 2;
+
+	while(3 + 1 = 4 < 9 and (1==1 || 2 < 2)) : //  True
+		head = 4; 
+		if(1 == 0) // False
+			So counter stays 2;
+	
+	while(4 + 1 =  5 < 9 and (0==1 || 2 < 2) : // False
+	
+// Update ans : 
+ans = max(ans, head - tail + 1); // max(0, 5) = 5
+
+if(0 > 4 ) // False
+else : 
+	if(1 == 0 ) : // False 
+	tail = 1
