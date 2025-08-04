@@ -1,9 +1,36 @@
+Template - Two Pointers (Form 2)
+
+In simpler terms, this variation can be termed as a variable-sized sliding window. Lets try to understand this 
+particular template using one problem.
+
+Problem Statement : 
+Identify the longest subarray containing only 1s in the binary array while allowing the option to flip almost k 0s to 
+1s.
+
+Input : 
+k = 2
+arr = [1, 0, 0, 1, 1, 0, 1, 1] 
+
+Output : 
+6
+
+Brute Force Approach : 
+For every possible start (the outer loop, from i = 0 to i < arr.length), try to run the inner loop 
+(from j = i to j < arr.length ) and count the number of elements. The inner loop should stop incase we encounter the 
+k+1th zero.
+
+The maximum value obtained among all the possible starts is the answer. 
+
+TC : O(n ^ 2)
+
 Template Based Approach : 
+-------------------------
 
 Initialise the 4 essential markers.  
 (tail = 0, head = -1, counter = 0, ans = 0)
 
-
+Iteration 1 (tail = 0) : 
+------------------------
 while(tail < arr.length) : // 0 < 8 - True 
 	while(-1 + 1 = 0 < 8 and (1==1 || 0 < 2)) : //  True
 		head = 0;
@@ -25,7 +52,9 @@ while(tail < arr.length) : // 0 < 8 - True
 		if(1 == 0) // False
 			So counter stays 2;
 
-	while(3 + 1 = 4 < 8 and (1==1 || 2 < 2)) : //  True
+	
+
+while(3 + 1 = 4 < 8 and (1==1 || 2 < 2)) : //  True
 		head = 4; 
 		if(1 == 0) // False
 			So counter stays 2;
@@ -41,7 +70,8 @@ else :
 	tail = 1
 
 
-
+Iteration 2 (tail = 1) : 
+------------------------
 while(tail < arr.length) : // 1 < 8 - True
 	while(4 + 1 = 5 < 8 and (0==1 || 2 < 2)) : // False
 
@@ -55,7 +85,8 @@ else :
 	tail = 2
 
 
-
+Iteration 3 (tail = 2) :  
+------------------------
 while(tail < arr.length) : // 2 < 8 - True
 	while(4 + 1 = 5 < 8 and (0==1 || 1 < 2)) : // True
 		head = 5;
@@ -85,6 +116,8 @@ else :
 
 
 
+Iteration 4 (tail = 3) : 
+------------------------
 while(tail < arr.length) : // 3 < 8 - True
 	while(7 + 1 = 8 < 8 and (...) // False
 
@@ -96,8 +129,8 @@ else :
 	if(1 == 0 ) : // False
 	tail = 4
 
-
-
+Iteration 5 (tail = 4) : 
+------------------------
 while(tail < arr.length) : // 4 < 8 - True
 	while(7 + 1 = 8 < 8 and (...) // False
 
@@ -110,9 +143,11 @@ else :
 	tail = 5
 
 
-
+Iteration 6 (tail = 5) : 
+------------------------
 while(tail < arr.length) : // 5 < 8 - True
 	while(7 + 1 = 8 < 8 and (...) // False
+
 
 // Update ans : 
 ans = max(ans, head - tail + 1); // max(6, 3) = 6
@@ -124,7 +159,8 @@ else :
 	tail = 6
 
 
-
+Iteration 7 (tail = 6) : 
+------------------------
 while(tail < arr.length) : // 6 < 8 - True
 	while(7 + 1 = 8 < 8 and (...) // False
 
@@ -137,7 +173,8 @@ else :
 	tail = 7
 
 
-
+Iteration 8 (tail = 7) : 
+------------------------
 while(tail < arr.length) : // 7 < 8 - True
 	while(7 + 1 = 8 < 8 and (...) // False
 
@@ -150,5 +187,18 @@ else :
 	tail = 8
 
 
-
+Iteration 9 (tail = 8) : 
+-------------------------
 while(tail < arr.length) : // 8 < 8 - False → exit
+
+Hence, ans = 6	
+
+
+
+
+
+			
+
+
+
+
