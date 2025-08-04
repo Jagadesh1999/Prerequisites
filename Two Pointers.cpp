@@ -51,10 +51,8 @@ while(tail < arr.length) : // 0 < 8 - True
 		head = 3; 
 		if(1 == 0) // False
 			So counter stays 2;
-
 	
-
-while(3 + 1 = 4 < 8 and (1==1 || 2 < 2)) : //  True
+	while(3 + 1 = 4 < 8 and (1==1 || 2 < 2)) : //  True
 		head = 4; 
 		if(1 == 0) // False
 			So counter stays 2;
